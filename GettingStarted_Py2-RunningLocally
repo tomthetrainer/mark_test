@@ -1,0 +1,133 @@
+EventStoreDB Python Instructions for Running Locally
+Overview
+Welcome to the Python example of Event Store’s From Scratch series.  This series lets you quickly overcome the common challenges of setting up and configuring a new development environment and focus on advancing your EventStoreDB skills.   
+
+The From Scratch series provides working code examples for basic reads and writes to EventStoreDB, a tested environment to run the code, and instructions that clearly describe the steps required to run the code successfully. 
+
+Each From Scratch repository provides the following:
+A working Github Codespaces environment
+Instructions on running EventStoreDB locally
+Instructions to set up a similar project on your own 
+
+We recommend you progress through the From Scratch projects in the following order:
+Run the code in Codespaces
+Clone the For Scratch GitHub repo, and follow the instructions to run it locally
+Build your own project 
+
+This document assumes you have successfully run the code in Codespaces.  Your next step is downloading or cloning the GitHub repository and running the code on your computer.  This is the recommended second stage in Event Store’s From Scratch Python series.  
+
+Other clients in the From Scratch series include:
+Node
+Java
+.NET
+Topics covered
+Download or clone the GitHub repository
+Install an IDE
+Install and configure Python locally 
+Start a Docker container running EventStoreDB
+Execute the Python code to write and read an event to EventStoreDB
+
+
+Before you start
+To run the code locally, you will need the following:
+A working Python installation (some instructions included below)
+An IDE (*optional)
+Docker
+
+Download or clone the GitHub repository
+On the GitHub repository's home page, select the green “Code” button. Ensure you are in the “Local” tab. Choose one of the following options to download the repo code to a local directory.  
+
+Option 1:  Using Git Clone
+Copy the URL provided
+Open a terminal window, and run the following command.  
+
+git clone https://github.com/EventStore/EventStoreDB-From-Scratch-Python.git
+Option 2:  Download repo to a zip file
+Select “Download ZIP” located at the bottom of the Local tab
+
+
+Install an IDE
+This is an optional step.  If you prefer using an IDE, please follow these instructions to download VS Code.  
+
+https://code.visualstudio.com/download.
+
+If you prefer an alternate IDE, please feel free to use the IDE of your choice.  
+
+If you opt not to use an IDE, the code can be run from the command line.  
+Install and configure Python locally
+
+To execute Python code, you must have a Python interpreter installed. One way to verify if Python is installed is to run the following command in a terminal window.  
+
+python –version
+
+Note that in some environments it might be necessary to run “python3” instead of “python.”  In this case, use the following command.  
+
+python3 --version
+
+If you need to install Python, please reference:  https://www.python.org/downloads/
+Create a Python virtual environment and load dependencies
+The requirements.txt file lists the dependencies needed to run the Python code included in this repo. Installing these into the main Python environment is fine if you only run this project. However, when running many Python projects with many dependencies, you might encounter conflicts where different projects require different library versions.  
+
+One way to deal with this is with virtual environments, or “venvs.” Similar tools, such as Conda and Miniconda exist, but “venv” is used for this example.
+
+To create a “venv” run the following command.
+
+python -m venv .venv
+
+To activate the “venv” on Windows run the following command.
+
+.venv\Scripts\activate.bat
+
+Run the following command to activate the “venv” on an alternate OS.
+
+source .venv/bin/activate
+
+Your prompt will now have “(.venv)” prepended to it, so you know you are in the “venv.”
+
+To load the EventStoreDB dependencies listed in “requirements.txt” run the following. 
+
+pip install -r requirements.txt
+
+Start a Docker container running EventStoreDB
+Install Docker by following these instructions:  https://docs.docker.com/engine/install/
+Download and run the EventStoreDB Docker container using the command line 
+The following command will start an unsecured single instance EventStoreDB cluster locally. 
+
+docker run -d --name esdb-node -it -p 2113:2113 -p 1113:1113 \
+     eventstore/eventstore:lts --insecure --run-projections=All \
+     --enable-external-tcp --enable-atom-pub-over-http
+
+
+Like the Codespaces environment, you can view the EventStoreDB WebUI by pointing a browser to http://localhost:2113/.  
+Execute the Python code to write and read an event to EventStoreDB
+Execute the Python code to append an event
+Run this command in the terminal.
+
+python sample_append.py
+
+
+Execute the Python code to read events in the stream
+Run this command in the terminal
+
+python sample_read.py
+Verify by checking the WebUI
+After executing the code, view the “Stream Browser” tab within the WebUI to verify the events were written to a stream.
+
+
+
+Congratulations!  After running the sample program.cs you have succeeded in writing and reading events to and from EventstoreDB.
+Exit the “venv”
+To exit the “venv” run the “deactivate” command in the terminal.
+
+deactivate
+
+Next Steps
+Now that you have successfully written and read events in EventstoreDB locally, we recommend you continue your learning with the From Scratch Python instructions for setting up a local environment.  
+
+As you progress with your EventStoreDB skills, you can also find additional examples in the following repo:
+
+https://github.com/EventStore/samples
+In particular, we recommend the Quickstart examples here:
+https://github.com/EventStore/samples/tree/main/Quickstart
+
+
