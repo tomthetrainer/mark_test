@@ -55,7 +55,7 @@ git clone https://github.com/EventStore/EventStoreDB-From-Scratch-Python.git
 Select “Download ZIP” located at the bottom of the Local tab
 
 
-Install an IDE
+# Install an IDE
 This is an optional step.  If you prefer using an IDE, please follow these instructions to download VS Code.  
 
 https://code.visualstudio.com/download.
@@ -63,6 +63,7 @@ https://code.visualstudio.com/download.
 If you prefer an alternate IDE, please feel free to use the IDE of your choice.  
 
 If you opt not to use an IDE, the code can be run from the command line.  
+
 Install and configure Python locally
 
 To execute Python code, you must have a Python interpreter installed. One way to verify if Python is installed is to run the following command in a terminal window.  
