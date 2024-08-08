@@ -3,7 +3,7 @@
 ## Overview
 Welcome to the first Python example from Event Store’s **Getting Started From Scratch** series.  This series helps you quickly overcome the common challenges of setting up and configuring a new development environment and focus on advancing your EventStoreDB skills.   
 
-This series provides working code examples for basic reads and writes to EventStoreDB, a tested environment to run the code and instructions that clearly describe the steps required to run the code successfully. 
+This series provides working code examples for basic reads and writes to EventStoreDB, a tested environment to run the code, and instructions that clearly describe the steps required to run the code successfully. 
 
 Each From Scratch repository provides the following:
   - A working GitHub Codespaces environment
