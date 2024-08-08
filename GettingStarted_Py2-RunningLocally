@@ -1,48 +1,57 @@
-EventStoreDB Python Instructions for Running Locally
-Overview
-Welcome to the Python example of Event Store’s From Scratch series.  This series lets you quickly overcome the common challenges of setting up and configuring a new development environment and focus on advancing your EventStoreDB skills.   
+# EventStoreDB Python Instructions for Running Locally
+
+## Overview
+Welcome to the Python example of Event Store’s **Getting Started From Scratch** series.  This series helps you quickly overcome the common challenges of setting up and configuring a new development environment and focus on advancing your EventStoreDB skills.   
 
 The From Scratch series provides working code examples for basic reads and writes to EventStoreDB, a tested environment to run the code, and instructions that clearly describe the steps required to run the code successfully. 
 
 Each From Scratch repository provides the following:
-A working Github Codespaces environment
-Instructions on running EventStoreDB locally
-Instructions to set up a similar project on your own 
+     - A working Github Codespaces environment
+     - Instructions on running EventStoreDB locally
+     - Instructions to set up a similar project on your own 
 
 We recommend you progress through the From Scratch projects in the following order:
-Run the code in Codespaces
-Clone the For Scratch GitHub repo, and follow the instructions to run it locally
-Build your own project 
+     1. Run the code in Codespaces
+     2. Clone the For Scratch GitHub repo, and follow the instructions to run it locally
+     3. Build your own project 
 
-This document assumes you have successfully run the code in Codespaces.  Your next step is downloading or cloning the GitHub repository and running the code on your computer.  This is the recommended second stage in Event Store’s From Scratch Python series.  
+This document assumes you have successfully run the [Python code in Codespaces](https://github.com/tomthetrainer/mark_test/blob/main/GettingStarted_Py1-Codespaces).  Your next step is downloading or cloning the GitHub repository and running the code on your computer.  This is the recommended second stage in Event Store’s From Scratch Python series.  
 
 Other clients in the From Scratch series include:
-Node
-Java
-.NET
-Topics covered
-Download or clone the GitHub repository
-Install an IDE
-Install and configure Python locally 
-Start a Docker container running EventStoreDB
-Execute the Python code to write and read an event to EventStoreDB
+     - Node
+     - Java
+     - .NET
+
+## Topics covered
+     1. Download or clone the GitHub repository
+     2. Install an IDE
+     3. Install and configure Python locally 
+     4. Start a Docker container running EventStoreDB
+     5. Execute the Python code to write and read an event to EventStoreDB
 
 
-Before you start
+## Before you start
 To run the code locally, you will need the following:
-A working Python installation (some instructions included below)
-An IDE (*optional)
-Docker
+     - A working Python installation (some instructions included below)
+     - An IDE (*optional)
+     - Docker
 
-Download or clone the GitHub repository
-On the GitHub repository's home page, select the green “Code” button. Ensure you are in the “Local” tab. Choose one of the following options to download the repo code to a local directory.  
+# Download or clone the GitHub repository
+On the [GitHub repository's home page](https://github.com/EventStore/EventStoreDB-From-Scratch-Python/blob/main/README.md), select the green “Code” button. Ensure you are in the “Local” tab. Choose one of the following options to download the repo code to a local directory.  
 
-Option 1:  Using Git Clone
+<p align="center">
+  <img width="177" height="143" src="https://github.com/tomthetrainer/mark_test/blob/main/images/gs-py2/py2-image1.png">
+</p>
+
+## Option 1:  Using Git Clone
 Copy the URL provided
 Open a terminal window, and run the following command.  
 
+```
 git clone https://github.com/EventStore/EventStoreDB-From-Scratch-Python.git
-Option 2:  Download repo to a zip file
+```
+
+## Option 2:  Download repo to a zip file
 Select “Download ZIP” located at the bottom of the Local tab
 
 
