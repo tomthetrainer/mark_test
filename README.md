@@ -3,7 +3,7 @@
 ## Overview
 Welcome to the first Python example from Event Store’s **Getting Started From Scratch** series.  This series helps you quickly overcome the common challenges of setting up and configuring a new development environment and focus on advancing your EventStoreDB skills.   
 
-This series provides working code examples for basic reads and writes to EventStoreDB, a tested environment to run the code and instructions that clearly describe the steps required to run the code successfully. 
+This series provides working code examples for basic reads and writes to EventStoreDB, a tested environment to run the code, and instructions that clearly describe the steps required to run the code successfully. 
 
 Each From Scratch repository provides the following:
   - A working GitHub Codespaces environment
@@ -42,7 +42,7 @@ Here are the steps to launch the FromScratch repos in GitHub Codespaces.
   2. Click on the green “<> Code” button
 
 <p align="center">
-  <img width="417" height="177" src="https://github.com/tomthetrainer/mark_test/blob/main/image1-codespaces.png">
+  <img width="417" height="177" src="https://github.com/tomthetrainer/mark_test/blob/main/images/image1-codespaces.png">
 </p>
 
   3. You will see two tabs titled “Local” and “Codespaces.” Select “Codespaces,” then click the green button labeled “Create codespace on main.”
@@ -68,86 +68,110 @@ https://developers.eventstore.com/server/v24.2/installation.html#docker.
 
 We provide a shell script for the From Scratch project that starts or restarts a Docker container running EventStoreDB.
 
+<p align="center">
+  <img width="479" height="253" src="https://github.com/tomthetrainer/mark_test/blob/main/image4-pycodespaces.png">
+</p>
 
+## Some notes on the ‘start_cluster.sh’
+The ‘start_cluster.sh’ script is designed to either start or, in the case of an already running Docker container, restart the container. Restarting the container with **start_cluster.sh** will delete any streams you had written to the previous instance of the Docker container. This design decision is intentional.
 
-Some notes on the ‘start_cluster.sh’
-The ‘start_cluster.sh’ script is designed to either start or, in the case of an already running Docker container, restart the container. Restarting the container with start_cluster.sh will delete any streams you had written to the previous instance of the Docker container. This design decision is intentional.
-
-Please note that Codespaces are set to pause after a period of inactivity.  When restarting an inactivated Codespace, the start_cluster.sh script may fail to restart the Docker container.  The most straightforward solution to this issue is terminating the Codespace and starting a new one. 
+Please note that Codespaces are set to pause after a period of inactivity.  When restarting an inactivated Codespace, the **start_cluster.sh** script may fail to restart the Docker container.  The most straightforward solution to this issue is terminating the Codespace and starting a new one. 
 
 Follow the steps below to start your cluster.
 
-To launch a Docker container running EventStoreDB where the “FromScratch” code will write and read events, run the start_cluster.sh script.  Type the following command into the terminal located at the bottom of your Codespace.
+  1. To launch a Docker container running EventStoreDB where the “FromScratch” code will write and read events, run the start_cluster.sh script.  Type the following command into the terminal located at the bottom of your Codespace.
 
+```
 ./start_cluster.sh
+```
+
+<p align="center">
+  <img width="452" height="153" src="https://github.com/tomthetrainer/mark_test/blob/main/images/image5-pycodespaces.png">
+</p>
 
 
+Once your Docker container has finished downloading, you may see a pop-up stating, “Your application running on port 113 is available…” Do not click “Open in Browser.”  Port:1113 is used for RPC calls and will not direct you to the WebUI (which you will do in the next step).
 
+<p align="center">
+  <img width="441" height="171" src="https://github.com/tomthetrainer/mark_test/blob/main/images/image6-pycodespaces.png">
+</p>
 
-Once your Docker container has finished downloading, you may see a pop-up stating, “Your application running on port 113 is available…” Do not click “Open in Browser.”  Port :1113 is used for RPC calls and will not direct you to the WebUI (which you will do in the next step).
+## Access the EventStoreDB WebUI Stream Browser
+  1. Open the WebUI of EventStoreDB running in the Docker container.  EventStoreDB uses port:1113 and port:2113.  Open the WebUI ‘port:2113’ in a browser tab.  
 
+<p align="center">
+  <img width="480" height="208" src="https://github.com/tomthetrainer/mark_test/blob/main/images/image7-pycodespaces.png">
+</p>
 
+  2. Select the Stream Browser tab from the EventStoreDB WebUI. After running the sample append code, the events written in the demo will be visible here.
 
-Access the EventStoreDB WebUI Stream Browser
-Open the WebUI of EventStoreDB running in the Docker container.  EventStoreDB uses ports :1113 and :2113.  Open the WebUI ‘port :2113’ in a browser tab.  
+<p align="center">
+  <img width="452" height="212" src="https://github.com/tomthetrainer/mark_test/blob/main/images/image8-pycodespaces.png">
+</p>
 
-
-
-Select the Stream Browser tab from the EventStoreDB WebUI. After running the sample append code, the events written in the demo will be visible here.
-
-
-
-Stream Browser view explained
+## Stream Browser view explained
 The ‘Stream Browser’ tab provides an overview of recently created and changed streams.  Clicking on a stream name shows details about the individual stream.
 
 A system stream in EventStoreDB is a type of stream that is used for system-level operations and information. A “$” prefix distinguishes these streams. For example, the stream metadata for a stream named “foo” is $foo. System streams can contain metadata for other streams or system-level information.
 
 You can ignore system streams for this example. However, as you continue on your EventStoreDB journey, you will find them useful information sources. 
 
+<p align="center">
+  <img width="538" height="280" src="https://github.com/tomthetrainer/mark_test/blob/main/images/image9-pycodespaces.png">
+</p>
 
 
+**Congratulations!** You have successfully started the EventStoreDB cluster and viewed the stream browser from the EventStoreDB WebUI.
 
+## Run the Python code sample
+  1. View the WebUI to verify that you have a running EventStoreDB cluster. If you need to start the cluster, run the following in a terminal window.  
 
-Congratulations! You have successfully started the EventStoreDB cluster and viewed the stream browser from the EventStoreDB WebUI.
-Run the Python code sample
-View the WebUI to verify that you have a running EventStoreDB cluster. If you need to start the cluster, run the following in a terminal window.  
-
+```
 ./start_cluster.sh
+```
+
+  2. Open the stream browser in the WebUI of the cluster
+
+  3. In the VS Code Explorer tab on the left, you will see the following files (descriptions provided for reference):
+     
+
+  | File | Description |
+  | ---  | --- |
+  | .gitignore | File exclusion list for GitHub |
+  | CodeSpacesInstructions.pdf 	      | Instructions for CodeSpaces                    | 
+  | InstructionsForRunningLocally.pdf 	|Instructions for running locally              |
+  | README.md  				                | The README file for the repo                  |
+  | requirements.txt			              | Python dependency management file             |
+  | sample_append.py			              | Python program to append an event             |
+  | sample_read.py			                | Python program to read events                 |
+  | start_cluster.sh  		              | Shell script that starts EventStoreDB docker |
 
 
-Open the stream browser in the WebUI of the cluster
-
-In the VS Code Explorer tab on the left, you will see:
-
-.gitignore 				(file exclusion list for GitHub)
-CodeSpacesInstructions.pdf 	(Instructions for CodeSpaces)
-InstructionsForRunningLocally.pdf 	(Instructions for running locally)
-README.md  				(The README file for the repo)
-requirements.txt			(A python dependency management file)
-sample_append.py			(a python program to append an event)
-sample_read.py			(A python program to read events)
-start_cluster.sh			(a shell script that starts EventStoreDB docker)
-
-Execute the program sample_append.py by typing the following in the terminal window at the bottom of the screen. 
-
+  4. Execute the program sample_append.py by typing the following in the terminal window at the bottom of the screen.
+     
+```
 python sample_append.py
+```
+
+  5. Verify that an event has been written to EventStoreDB by viewing the Stream Browser on the EventStoreDB WebUI.
 
 
-Verify that an event has been written to EventStoreDB by viewing the Stream Browser on the EventStoreDB WebUI.
+  6. Execute the program sample_read.py by running the following command in the terminal. You should see the event previously written displayed on the console. 
 
-
-Execute the program sample_read.py by running the following command in the terminal. You should see the event previously written displayed on the console. 
-
+```
 python sample_read.py
+```
 
+**Congratulations!**  After running sample_append.py followed by sample_read.py you have succeeded in Writing and Reading events to and from EventstoreDB. 
 
-Congratulations!  After running sample_append.py followed by sample_read.py you have succeeded in Writing and Reading events to and from EventstoreDB.  
-Next Steps
+## Next Steps
 Now that you have successfully leveraged GitHub Codespaces to read and write code to EventStoreDB, we recommend you continue your learning with the From Scratch Python instructions for running code locally.  
 
 As you progress with your EventStoreDB skills, you can also find additional examples in the following repo:
 
-https://github.com/EventStore/samples
+  https://github.com/EventStore/samples
+
 In particular, we recommend the Quickstart examples here:
-https://github.com/EventStore/samples/tree/main/Quickstart
+  
+  https://github.com/EventStore/samples/tree/main/Quickstart
 
