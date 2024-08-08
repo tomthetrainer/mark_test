@@ -48,13 +48,13 @@ Here are the steps to launch the FromScratch repos in GitHub Codespaces.
   3. You will see two tabs titled “Local” and “Codespaces.” Select “Codespaces,” then click the green button labeled “Create codespace on main.”
 
 <p align="center">
-  <img width="211" height="197" src="https://github.com/tomthetrainer/mark_test/blob/main/image2-codespaces.png">
+  <img width="211" height="197" src="https://github.com/tomthetrainer/mark_test/blob/main/images/image2-codespaces.png">
 </p>
 
 4. Wait for your Codespace to launch.  Depending on the container's configurations, this can take anywhere from a few seconds to a few minutes.  When it launches, you will see this image. 
 
 <p align="center">
-  <img width="354" height="214" src="https://github.com/tomthetrainer/mark_test/blob/main/image3-pycodespaces.png">
+  <img width="354" height="214" src="https://github.com/tomthetrainer/mark_test/blob/main/images/image3-pycodespaces.png">
 </p>
 
 5. You can make some formatting choices on the welcome page of VS Code (embedded in Codespaces). VS Code is the default IDE in Codespaces for the From Scratch project.  Choose your preferred theme or use the default theme by closing the “Welcome” tab.
@@ -69,7 +69,7 @@ https://developers.eventstore.com/server/v24.2/installation.html#docker.
 We provide a shell script for the From Scratch project that starts or restarts a Docker container running EventStoreDB.
 
 <p align="center">
-  <img width="479" height="253" src="https://github.com/tomthetrainer/mark_test/blob/main/image4-pycodespaces.png">
+  <img width="479" height="253" src="https://github.com/tomthetrainer/mark_test/blob/main/images/image4-pycodespaces.png">
 </p>
 
 ## Some notes on the ‘start_cluster.sh’
