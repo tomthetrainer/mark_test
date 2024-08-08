@@ -71,7 +71,9 @@ python –version
 
 Note that in some environments it might be necessary to run “python3” instead of “python.”  In this case, use the following command.  
 
+```
 python3 --version
+```
 
 If you need to install Python, please reference:  https://www.python.org/downloads/
 Create a Python virtual environment and load dependencies
